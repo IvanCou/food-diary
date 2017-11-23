@@ -52,6 +52,7 @@ class GithubUserProviderTest extends TestCase
             ->expects($this->once())
             ->method('deserialize')
             ->willReturn($userData);
+        
 
         $githubUserProvider = new GithubUserProvider($this->client, $this->serializer);
         $user = $githubUserProvider->loadUserByUsername('an-access-token');
